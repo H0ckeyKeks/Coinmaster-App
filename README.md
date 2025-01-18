@@ -1,7 +1,7 @@
 # Coinmaster App #
 by Jasmin S.
 
-#### Video Demo: #### <https://youtu.be/juhJSFFTSRk)>
+#### Video Demo: ####   <https://youtu.be/juhJSFFTSRk)>
 
 
 #### Description: ####

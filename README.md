@@ -1,9 +1,6 @@
 # Coinmaster App #
 by Jasmin S.
 
-#### Video Demo: ####   <https://youtu.be/juhJSFFTSRk)>
-
-
 #### Description: ####
 The Coinmaster App offers two kinds of services: The user can either convert currency into another currency (for example USD in EUR) or the user can calculate the amount of bills and coins that are needed to pay for an amount that was given by the user.
 

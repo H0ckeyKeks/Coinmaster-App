@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coinmaster App</title>
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+        <!-- Connecting the css stylesheet -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Welcome to the Coinmaster App</h1>
+            <p>The Coinmaster App will help you with converting your currency or with denominations.</p>
+            <p>Select the country your currency is from to proceed:</p>
+
+            <div class="form-container">
+                <form method="POST" action="/">
+                    <select name="country" id="country">
+                        <option value="">Select a country</option>
+                        {% for country in countries %}
+                            <option value="{{ country }}">{{ country }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <!-- Error message display -->
+                    {% if error_message %}
+                        <div class="error-message">
+                            {{ error_message }}
+                        </div>
+                    {% endif %}
+
+                    <p></p>
+                    <div>
+                        <button type="submit" name="action" value="conversion">Conversion</button>
+                        <button type="submit" name="action" value="breakdown">Breakdown</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><small>2024 Coinmaster: a CS50 Final Project by Jasmin S.</small></p>
+        </div>
+
+    </body>
+
+</html>

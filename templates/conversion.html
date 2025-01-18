@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Currency Conversion</title>
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+        <!-- Connecting the css stylesheet -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Currency Conversion</h1>
+            <p>You selected: {{ selected_country }}</p>
+            <p>Your selected Currency: {{ selected_currency }}</p>
+
+            <div class="form-container">
+                <form method="POST" action="/conversion">
+                    <input type="hidden" name="selected_country" value="{{ selected_country }}" />
+                    <input type="hidden" name="selected_currency" value="{{ selected_currency }}" />
+                    <label for="amount">Enter Amount:</label>
+                    <input type="number" name="amount" id="amount" required>
+                    <br><br>
+                    <label for="t_country">Convert to:</label>
+                    <select name="target_country" id="target_country" required>
+                        <option value="">Select a currency</option>
+                        {% for t_country in target_country %}
+                            <option value="{{ t_country }}">{{ t_country }}</option>
+                        {% endfor %}
+                    </select>
+                    <p> {{ amount }} {{ selected_currency }} are {{ conversion_result }} {{ target_currency }}</p> <!-- Display conversion result -->
+                    <div>
+                        <br><br>
+                        <button type="submit">Convert</button>
+                    </div>
+                    <div>
+                        <br><br>
+                        <button onclick="window.location.href = '/';">HOME</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><small>2024 Coinmaster: a CS50 Final Project by Jasmin S.</small></p>
+        </div>
+
+    </body>
+
+</html>

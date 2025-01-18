@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Denomination Breakdown</title>
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+        <!-- Connecting the css stylesheet -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Denomination Breakdown</h1>
+            <p>You selected: {{ selected_country }}</p>
+            <div class="form-container"></div>
+            <form method="POST" action="/breakdown">
+                <input type="hidden" name="selected_country" value="{{ selected_country }}" />
+                <label for="amount">Enter Amount:</label>
+                <input type="text" name="amount" id="amount" required>
+                <div>
+                    <br><br>
+                    <button type="submit">Calculate Breakdown</button>
+                </div>
+                <p>You will need these banknotes and coins: {{ breakdown_result }}</p> <!-- Display breakdown result -->
+                <div>
+                    <br><br>
+                    <button onclick="window.location.href = '/';">HOME</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><small>2024 Coinmaster: a CS50 Final Project by Jasmin S.</small></p>
+    </div>
+
+</body>
+
+</html>
